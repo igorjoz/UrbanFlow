@@ -17,7 +17,7 @@ Aplikacja webowa do śledzenia opóźnień komunikacji miejskiej ZTM Gdańsk. Um
 
 ## ✨ Funkcjonalności
 
-### Autentykacja
+### Uwierzytelnianie
 - ✅ Rejestracja nowych użytkowników z walidacją
 - ✅ Logowanie z JWT token
 - ✅ Ochrona tras (navigation guards)
@@ -52,7 +52,7 @@ Aplikacja webowa do śledzenia opóźnień komunikacji miejskiej ZTM Gdańsk. Um
 | TypeScript | 5.x | Typowany JavaScript |
 | SQLite | 3.x | Baza danych |
 | Sequelize | 6.x | ORM |
-| JWT | - | Autentykacja |
+| JWT | - | Uwierzytelnianie |
 | Swagger | - | Dokumentacja API |
 
 ### Frontend
