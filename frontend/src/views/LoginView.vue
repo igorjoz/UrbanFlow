@@ -117,7 +117,7 @@ onMounted(() => {
         <!-- Test user hint -->
         <div class="text-center text-xs text-gray-400 bg-gray-100 p-3 rounded-md">
           <p class="font-medium">Testowe konto:</p>
-          <p>Email: testuser@example.com</p>
+          <p>Email: test@urbanflow.pl</p>
           <p>Hasło: Test123!</p>
         </div>
       </form>

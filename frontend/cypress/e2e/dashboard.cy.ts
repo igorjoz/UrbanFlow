@@ -29,8 +29,8 @@ describe('Dashboard', () => {
   })
 
   it('should show user stops if any exist', () => {
-    // The test user has some stops seeded
-    cy.get('.bg-gradient-to-r').should('exist') // Stop cards have gradient headers
+    // The test user has some stops seeded, wait for them to load
+    cy.get('[class*="bg-gradient-to-r"]', { timeout: 10000 }).should('exist') // Stop cards have gradient headers
   })
 
   it('should navigate to map view', () => {

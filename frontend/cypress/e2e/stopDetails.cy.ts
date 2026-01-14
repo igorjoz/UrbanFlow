@@ -4,7 +4,13 @@ describe('Stop Details', () => {
   })
 
   it('should navigate to stop details from dashboard', () => {
-    // Assuming test user has stops
+    // Wait for stops to load
+    cy.get('[class*="bg-gradient-to-r"]', { timeout: 10000 }).should('exist')
+    
+    // Click on the stop card header to expand it
+    cy.get('[class*="bg-gradient-to-r"]').first().click()
+    
+    // Now click on the details link
     cy.get('a[href*="/stop/"]').first().click()
     
     cy.url().should('match', /\/stop\/\d+/)

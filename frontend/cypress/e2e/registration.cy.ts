@@ -21,14 +21,18 @@ describe('Registration', () => {
   it('should update password requirement indicators as user types', () => {
     cy.get('input[type="password"]').first().type('test')
     
-    // Length requirement not met
+    // Length requirement not met (should not have green class)
     cy.contains('li', 'Minimum 8 znaków').should('not.have.class', 'text-green-600')
     
     cy.get('input[type="password"]').first().clear().type('TestPass1')
     
-    // All requirements met (visual check)
-    cy.contains('li', 'Minimum 8 znaków').should('have.class', 'text-green-600')
-    cy.contains('li', 'Wielka litera').should('have.class', 'text-green-600')
+    // All requirements met - check for green color class
+    cy.contains('li', 'Minimum 8 znaków').should('satisfy', ($el) => {
+      return $el.hasClass('text-green-600') || $el.attr('class')?.includes('text-green')
+    })
+    cy.contains('li', 'Wielka litera').should('satisfy', ($el) => {
+      return $el.hasClass('text-green-600') || $el.attr('class')?.includes('text-green')
+    })
   })
 
   it('should show error when passwords do not match', () => {

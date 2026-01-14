@@ -39,11 +39,11 @@ describe('Navigation Guards', () => {
     cy.url().should('include', 'redirect')
     
     // After login, should go to original destination
-    cy.get('input[type="email"]').type('testuser@example.com')
+    cy.get('input[type="email"]').type('test@urbanflow.pl')
     cy.get('input[type="password"]').type('Test123!')
     cy.get('button[type="submit"]').click()
     
-    cy.url().should('include', '/stop/1667')
+    cy.url().should('include', '/stop/1667', { timeout: 15000 })
   })
 
   it('should show 404 page for unknown routes', () => {

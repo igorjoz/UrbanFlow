@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { RouterLink, useRoute } from 'vue-router'
+import { RouterLink, useRoute, useRouter } from 'vue-router'
 import { useAuthStore } from '@/stores/auth'
 
 const authStore = useAuthStore()
 const route = useRoute()
+const router = useRouter()
 
 const user = computed(() => authStore.currentUser)
 
@@ -17,6 +18,7 @@ const isActive = (path: string) => route.path === path
 
 const handleLogout = () => {
   authStore.logout()
+  router.push('/login')
 }
 </script>
 

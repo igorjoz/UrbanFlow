@@ -11,10 +11,10 @@
     "test:unit": "vitest",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
-    "test:e2e": "cypress run",
-    "test:e2e:open": "cypress open",
-    "cypress:open": "cypress open",
-    "cypress:run": "cypress run",
+    "test:e2e": "cross-env ELECTRON_DISABLE_GPU=true cypress run",
+    "test:e2e:open": "cross-env ELECTRON_DISABLE_GPU=true cypress open",
+    "cypress:open": "cross-env ELECTRON_DISABLE_GPU=true cypress open",
+    "cypress:run": "cross-env ELECTRON_DISABLE_GPU=true cypress run",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix"
   },
   "dependencies": {
@@ -37,6 +37,7 @@
     "@vue/test-utils": "^2.4.3",
     "@vue/tsconfig": "^0.5.1",
     "autoprefixer": "^10.4.16",
+    "cross-env": "^10.1.0",
     "cypress": "^13.6.1",
     "eslint": "^8.55.0",
     "eslint-plugin-vue": "^9.19.2",
